@@ -39,21 +39,37 @@ function getWorkingHours(empcheck){
         default:
             return 0;
     }
-    let empHrs=0;
-    empcheck=Math.floor(Math.random()*10)%3;
-    empHrs=getWorkingHours(empcheck);
-    let empWage=empHrs*Wage_per_hours;
-    console.log("Emp wage: "+empWage);
+}
+//     let empHrs=0;
+//     empcheck=Math.floor(Math.random()*10)%3;
+//     empHrs=getWorkingHours(empcheck);
+//     let empWage=empHrs*Wage_per_hours;
+//     console.log("Emp wage: "+empWage);
     
 
-}
+//}
 // uc4-wageforMonth
-const Number_of_workingdays=20
-empHrs=0
-for(let day=0 ;day<Number_of_workingdays;day++){
+// const Number_of_workingdays=20
+// empHrs=0
+// for(let day=0 ;day<Number_of_workingdays;day++){
+//     let empcheck=Math.floor(Math.random()*10)%3;
+//     empHrs+=getWorkingHours(empcheck);
+// }
+// empWage=empHrs*Wage_per_hours;
+// console.log("Total hrs: "+empHrs+"Emp wages:"+empWage);
+
+// uc5-conditionalWage
+
+const Max_Hrs_In_Month=100;
+const Number_of_working_days=10
+let totalEmpHrs=0
+let totalWorkingDays=0
+while(totalEmpHrs<Max_Hrs_In_Month && totalWorkingDays<Number_of_working_days){
+    totalWorkingDays++;
     let empcheck=Math.floor(Math.random()*10)%3;
-    empHrs+=getWorkingHours(empcheck);
+    totalEmpHrs=getWorkingHours(empcheck);
 }
-empWage=empHrs*Wage_per_hours;
-console.log("Total hrs: "+empHrs+"Emp wages:"+empWage);
+let empWage=totalEmpHrs*Wage_per_hours;
+console.log("Total Days: "+totalWorkingDays+"Total Hrs:"+totalEmpHrs+"Emp wage: "+empWage)
+
 
