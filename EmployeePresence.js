@@ -45,5 +45,15 @@ function getWorkingHours(empcheck){
     let empWage=empHrs*Wage_per_hours;
     console.log("Emp wage: "+empWage);
     
+
 }
+// uc4-wageforMonth
+const Number_of_workingdays=20
+empHrs=0
+for(let day=0 ;day<Number_of_workingdays;day++){
+    let empcheck=Math.floor(Math.random()*10)%3;
+    empHrs+=getWorkingHours(empcheck);
+}
+empWage=empHrs*Wage_per_hours;
+console.log("Total hrs: "+empHrs+"Emp wages:"+empWage);
 
