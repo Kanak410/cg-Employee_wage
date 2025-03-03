@@ -7,3 +7,23 @@ if(empcheck == Is_Absent){
 else{
     console.log("Employee is present");``
 }
+// uc2-daily wages 
+const Is_Part_time=1;
+const Is_Full_time=2;
+const Part_hours=4;
+const Full_hours=8;
+const Wage_per_hours=20;
+let empHrs=0;
+empcheck=Math.floor(Math.random()*10)%3;
+switch(empcheck){
+    case Is_Part_time:
+    empHrs=Part_hours;
+    break;
+    case Is_Full_time:
+        empHrs=Full_hours;
+        break;
+    default:
+        empHrs=0;
+}
+let empWage=empHrs*Wage_per_hours;
+console.log("Emp Wage: "+empWage)
