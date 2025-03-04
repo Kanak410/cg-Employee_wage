@@ -120,11 +120,14 @@ console.log("UC7C- Daily wage filter when full time wage Earned ")
 console.log(fullDayWageArr)
 // UC7D
 function isAllFulltimeWage(dailyWage){
-    return dailyWage.include("160")
+    return dailyWage.includes("160")
 }
 console.log("UC7D-First time Fulltime wage was earned on day:"+mapDayWithWageArr.find(fulltimewage))
 
 //uc7e
-
+function isAllFulltimeWage(dailyWage){
+    return dailyWage.includes("160")
+}
+console.log("UC7E -check  all element have full time wage: "+fullDayWageArr.every(isAllFulltimeWage))
 
 
