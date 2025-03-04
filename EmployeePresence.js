@@ -60,16 +60,33 @@ function getWorkingHours(empcheck){
 
 // uc5-conditionalWage
 
+// const Max_Hrs_In_Month=100;
+// const Number_of_working_days=10
+// let totalEmpHrs=0
+// let totalWorkingDays=0
+// while(totalEmpHrs<Max_Hrs_In_Month && totalWorkingDays<Number_of_working_days){
+//     totalWorkingDays++;
+//     let empcheck=Math.floor(Math.random()*10)%3;
+//     totalEmpHrs=getWorkingHours(empcheck);
+// }
+// let empWage=totalEmpHrs*Wage_per_hours;
+// console.log("Total Days: "+totalWorkingDays+"Total Hrs:"+totalEmpHrs+"Emp wage: "+empWage)
+
+// uc6-storeDailyWage
+function calcDailyWage(empHrs){
+    return empHrs*Wage_per_hours;
+}
 const Max_Hrs_In_Month=100;
-const Number_of_working_days=10
+const Number_of_working_days=20
 let totalEmpHrs=0
 let totalWorkingDays=0
-while(totalEmpHrs<Max_Hrs_In_Month && totalWorkingDays<Number_of_working_days){
+let empDailyWageArr=new Array();
+while(totalEmpHrs < Max_Hrs_In_Month && totalWorkingDays<Number_of_working_days){
     totalWorkingDays++;
     let empcheck=Math.floor(Math.random()*10)%3;
-    totalEmpHrs=getWorkingHours(empcheck);
+    let empHrs=getWorkingHours(empcheck)
+    totalEmpHrs+=empHrs;
+    empDailyWageArr.push(empHrs);
 }
-let empWage=totalEmpHrs*Wage_per_hours;
-console.log("Total Days: "+totalWorkingDays+"Total Hrs:"+totalEmpHrs+"Emp wage: "+empWage)
-
-
+let empWage=calcDailyWage(totalEmpHrs)
+console.log("total days: "+totalWorkingDays+" total hrs: "+totalEmpHrs+" emp wage: "+empWage)
