@@ -88,5 +88,15 @@ while(totalEmpHrs < Max_Hrs_In_Month && totalWorkingDays<Number_of_working_days)
     totalEmpHrs+=empHrs;
     empDailyWageArr.push(empHrs);
 }
-let empWage=calcDailyWage(totalEmpHrs)
-console.log("total days: "+totalWorkingDays+" total hrs: "+totalEmpHrs+" emp wage: "+empWage)
+// let empWage=calcDailyWage(totalEmpHrs)
+// console.log("total days: "+totalWorkingDays+" total hrs: "+totalEmpHrs+" emp wage: "+empWage)
+
+//uc7-Arrayoperations
+// UC 7A
+let totalEmployeeWage=0;
+function sum(dailywage){
+    totalEmployeeWage+=dailywage;
+}
+empDailyWageArr.foreach(sum);
+console.log("uc7A- total days : "+totalWorkingDays+"Total hrs: "+totalEmpHrs+"Emp wage: "+totalEmployeeWage);
+
