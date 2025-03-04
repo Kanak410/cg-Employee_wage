@@ -86,9 +86,9 @@ while(totalEmpHrs < Max_Hrs_In_Month && totalWorkingDays<Number_of_working_days)
     let empcheck=Math.floor(Math.random()*10)%3;
     let empHrs=getWorkingHours(empcheck)
     totalEmpHrs+=empHrs;
-    empDailyWageArr.push(empHrs);
+    empDailyWageArr.push(calcDailyWage(empHrs));
 }
-// let empWage=calcDailyWage(totalEmpHrs)
+let empWage=calcDailyWage(totalEmpHrs)
 // console.log("total days: "+totalWorkingDays+" total hrs: "+totalEmpHrs+" emp wage: "+empWage)
 
 //uc7-Arrayoperations
@@ -97,7 +97,7 @@ let totalEmployeeWage=0;
 function sum(dailywage){
     totalEmployeeWage+=dailywage;
 }
-empDailyWageArr.foreach(sum);
+empDailyWageArr.forEach(sum);
 //console.log("uc7A- total days : "+totalWorkingDays+"Total hrs: "+totalEmpHrs+"Emp wage: "+totalEmployeeWage);
 
 //UC 7B
@@ -112,5 +112,11 @@ console.log("UC7B - Daily Wage map");
 console.log(mapDayWithWageArr)
 
 //uc7C
+function fulltimewage(dailyWage){
+    return dailyWage.includes("160")
+}
+let fullDayWageArr=mapDayWithWageArr.filter(fulltimewage)
+console.log("UC7C- Daily wage filter when full time wage Earned ")
+console.log(fullDayWageArr)
 
 
