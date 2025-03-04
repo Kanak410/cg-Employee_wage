@@ -98,5 +98,19 @@ function sum(dailywage){
     totalEmployeeWage+=dailywage;
 }
 empDailyWageArr.foreach(sum);
-console.log("uc7A- total days : "+totalWorkingDays+"Total hrs: "+totalEmpHrs+"Emp wage: "+totalEmployeeWage);
+//console.log("uc7A- total days : "+totalWorkingDays+"Total hrs: "+totalEmpHrs+"Emp wage: "+totalEmployeeWage);
+
+//UC 7B
+let dailyCntr=0;
+function mapDayWithWage(dailyWage){
+    dailyCntr++;
+    return dailyCntr+"="+dailyWage;
+    
+}
+let mapDayWithWageArr=empDailyWageArr.map(mapDayWithWage);
+console.log("UC7B - Daily Wage map");
+console.log(mapDayWithWageArr)
+
+//uc7C
+
 
