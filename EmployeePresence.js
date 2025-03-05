@@ -109,6 +109,7 @@ while(totalEmpHrs <= Max_Hrs_In_Month && totalWorkingDays<Number_of_working_days
     )
 }
 console.log("UC 10 showing daily hrs using object array : "+empDailyHrsWageArr)
+{
 // console.log(empDailyWageMap)
 // function totalWages(totalWage,dailyWage){
 //   return totalWage + dailyWage
@@ -191,6 +192,7 @@ console.log("UC 10 showing daily hrs using object array : "+empDailyHrsWageArr)
 // console.log(`Full Working Days: ${fullWorkingDays}`);
 // console.log(`Part Working Days: ${partWorkingDays}`);
 // console.log(`Non-Working Days: ${nonWorkingDays}`);
+}
 
 //UC 11A calculate the total wages and total hours using the object arrays
 let totalWages=empDailyHrsWageArr.filter(dailyWageHrs=> dailyWageHrs.dailyWage>0)
@@ -199,6 +201,8 @@ let totalHrs=empDailyHrsWageArr
 .filter(dailyWageHrs=>dailyWageHrs.dailyHours>0)
 .reduce((dailyHours,dailyWageHrs)=>dailyHours+dailyWageHrs.dailyHours,0);
 console.log("UC 11A total hours: "+totalHrs+"Total wages: "+totalWages)
+process.stdout.write("UC 11B logging full work days")
+empDailyHrsWageArr.filter(dailyWageHrs=> dailyWageHrs.dailyHours==8).forEach(dailyWageHrs => process.stdout.write(dailyWageHrs.toString()))
 
 
 
