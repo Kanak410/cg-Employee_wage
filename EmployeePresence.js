@@ -148,6 +148,28 @@ console.log("UC 8 - Emp Wage Map totalHrs:  "+
 //     return numOfDays
 // }
 // console.log("UC 7G-Number of Days Emp Worked: "+empDailyWageArr.reduce(totalDayWorked,0))
+// UC -9 arrow function
+const findTotal = (totalVal, dailyVal) => totalVal + dailyVal;
 
+// Total Wage and Total Hours Calculation
+let totalWage = Array.from(empDailyWageMap.values()).reduce(findTotal, 0);
+let totalHours = Array.from(empDailyWageMap.keys()).reduce(
+    (total, day) => total + getWorkingHours(day), 0
+);
 
+console.log(`UC9A - Emp Wage with Arrow: Total Hours: ${totalHours}, Total Wage: ${totalWage}`);
+
+// Categorizing Working Days
+let fullWorkingDays = [], partWorkingDays = [], nonWorkingDays = [];
+
+empDailyWageMap.forEach((wage, day) => {
+    let hours = getWorkingHours(day);
+    if (hours === 8) fullWorkingDays.push(day);
+    else if (hours === 4) partWorkingDays.push(day);
+    else nonWorkingDays.push(day);
+});
+
+console.log(`Full Working Days: ${fullWorkingDays}`);
+console.log(`Part Working Days: ${partWorkingDays}`);
+console.log(`Non-Working Days: ${nonWorkingDays}`);
 
