@@ -110,12 +110,12 @@ while(totalEmpHrs <= Max_Hrs_In_Month && totalWorkingDays<Number_of_working_days
 }
 console.log("UC 10 showing daily hrs using object array : "+empDailyHrsWageArr)
 // console.log(empDailyWageMap)
-function totalWages(totalWage,dailyWage){
-  return totalWage + dailyWage
-}
-console.log("UC 8 - Emp Wage Map totalHrs:  "+
-  Array.from(empDailyWageMap.values()).reduce(totalWages,0))
-// console.log("total days: "+totalWorkingDays+" total hrs: "+totalEmpHrs+" emp wage: "+empWage)
+// function totalWages(totalWage,dailyWage){
+//   return totalWage + dailyWage
+// }
+// console.log("UC 8 - Emp Wage Map totalHrs:  "+
+//   Array.from(empDailyWageMap.values()).reduce(totalWages,0))
+// // console.log("total days: "+totalWorkingDays+" total hrs: "+totalEmpHrs+" emp wage: "+empWage)
 
 //uc7-Arrayoperations
 // UC 7A
@@ -191,6 +191,14 @@ console.log("UC 8 - Emp Wage Map totalHrs:  "+
 // console.log(`Full Working Days: ${fullWorkingDays}`);
 // console.log(`Part Working Days: ${partWorkingDays}`);
 // console.log(`Non-Working Days: ${nonWorkingDays}`);
+
+//UC 11A calculate the total wages and total hours using the object arrays
+let totalWages=empDailyHrsWageArr.filter(dailyWageHrs=> dailyWageHrs.dailyWage>0)
+.reduce((totalWages,dailyWageHrs)=>totalWages+dailyWageHrs.dailyWage,0);
+let totalHrs=empDailyHrsWageArr
+.filter(dailyWageHrs=>dailyWageHrs.dailyHours>0)
+.reduce((dailyHours,dailyWageHrs)=>dailyHours+dailyWageHrs.dailyHours,0);
+console.log("UC 11A total hours: "+totalHrs+"Total wages: "+totalWages)
 
 
 
